@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS : this</title>
+<script>
+    //this : 현재 객체(기본적으로 window)
+    document.write("<h2>this는 현재객체, 기본 window</h2>");
+    document.write("window == this : " + (window == this), "<br>");
+    document.write("window === this : " + (window === this), "<br>");
+    document.write("<hr>");
+    
+    //------------------------
+    var a = 100;
+    document.write("var a = 100 경우 >>>", "<br>");
+    document.write("a : " + a, "<br>");
+    document.write("window.a : " + window.a, "<br>");
+    document.write("this.a : " + this.a, "<br>");
+    document.write("<hr>");
+    
+    //window가 아닌 다른 객체의 내부에서 사용되는 this는 해당 객체를 의미
+    var obj = {
+        a : "aaaaaa",
+        b : function(){
+            return this.a; //this : 현재객체
+        },
+        c : function(){
+            return a; //this. 생략된 경우 : window.a를 의미
+        }
+    };
+    document.write("obj.a : " + obj.a, "<br>");
+    document.write("obj.b() return this.a : " + obj.b(), "<br>");
+    document.write("obj.c() return a : " + obj.c(), "<br>"); //전역변수 a값 100
+    
+    
+    
+    
+</script>
+</head>
+<body>
+  
+</body>
+</html>

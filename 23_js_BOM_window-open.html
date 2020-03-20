@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS : BOM window.open</title>
+ <script>
+    /*
+    BOM(Browser Object Model)
+    window 메소드(function)
+    open() : 새 창을 열 때 사용(window.open())
+        open(URL, 명칭, 출력형태옵션)
+    
+    <출력형태 옵션>
+    width, height, top, left : 크기, 위치 지정(픽셀)
+    location : 주소입력창 유무(yes, no, 1, 0)
+    menubar : 메뉴바의 유무(yes, no, 1, 0)
+    resizable : 화면 크기 조절 가능 여부(yes, no, 1, 0)
+    status : 상태표시줄 유무(yes, no, 1, 0)
+    toolbar : 툴바 유무(yes, no, 1, 0)
+    scrollbar : 스크롤바의 표시 여부(yes, no, 1, 0)
+    ------> 브라우저마다 적용 여부가 다름
+    */
+    function windowOpen(){
+        var pop = open("http://www.naver.com", "pop1", "width=400px, height=250px, top=100px, left=150px");
+    }
+    function windowOpen(){
+        var pop = open("http://www.naver.com", "pop1", "width=400px, height=250px, top=100px, left=150px, menubar=1, status=1, toolbar=1"); //--> 크롬에서는 사이즈만 적용됨ㅜㅜ
+    }
+    
+    function windowOpen_coffee() {
+        let olaf = window.open("24_js_BOM_window-close.html", "olaf", "width=300, height=250, left=150, top=100");
+    }
+</script>
+</head>
+<body>
+    <h2>BOM window.open()</h2>
+    <button onclick="windowOpen()">NAVER 창 열기</button>
+    <button onclick="windowOpen_coffee()">OLAF</button>
+
+</body>
+</html>

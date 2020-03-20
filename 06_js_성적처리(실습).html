@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript 성적처리</title>
+<script>
+    /* 한 사람의 성적을 입력받아 결과 출력
+    입력값 : 이름, 국어, 영어, 수학 점수(화면 입력 prompt)
+    계산 : 총점, 평균
+    결과출력 : 브라우저 화면에 결과를 표시
+    -----------------------
+    이름 : 홍길동
+    국어 : 100
+    영어 : 90
+    수학 : 80
+    ---------
+    총점 : 270
+    평균 : 90.0 (소수점이하 2째 자리까지)
+    */   
+    
+    let name = prompt("이름을 입력하세요");
+    let kor = prompt("국어점수를 입력하세요");
+    let eng = prompt("영어점수를 입력하세요");
+    let math = prompt("수학점수를 입력하세요");
+    
+    let tot = parseInt(kor)+parseInt(eng)+parseInt(math);
+    let avg = tot/3;
+    // avg = parseInt(tot * 100 / 3)/100;
+    // avg = Math.round(tot * 100 / 3) / 100;
+    alert("이름 : " + name + "\n"+
+          "국어 : " + kor + "\n"+
+          "영어 : " + eng + "\n"+
+          "수학 : " + math + "\n"+
+          "---------------"+"\n"+
+          "총점 : " + tot + "\n"+
+          "평균 : " + avg.toFixed(2));
+    
+    document.write("이름 : " + name + "<br>"+
+          "국어 : " + kor + "<br>"+
+          "영어 : " + eng + "<br>"+
+          "수학 : " + math + "<br>"+
+          "---------------"+"<br>"+
+          "총점 : " + tot + "<br>"+
+          "평균 : " + avg.toFixed(2));
+</script>
+</head>
+<body>
+    <h1>성적처리</h1>
+    
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

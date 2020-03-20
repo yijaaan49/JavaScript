@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS 이벤트 실습</title>
+<script>
+    window.onload = function(){
+        /*
+        let sheetChk = document.getElementById("sheetChk");
+        let naviChk = document.getElementById("naviChk");
+        let sunrfChk = document.getElementById("sunrfChk");
+        let carPrc = document.getElementById("carPrc");
+        let sheetPrc = document.getElementById("sheetPrc");
+        let naviPrc = document.getElementById("naviPrc");
+        let sunrfPrc = document.getElementById("sunrfPrc");
+        sheetChk.onclick = function(){
+            if(this.checked){
+                carPrc.innerHTML = parseInt(carPrc.innerHTML) + parseInt(sheetPrc.innerHTML);
+            } else {
+                carPrc.innerHTML = parseInt(carPrc.innerHTML) - parseInt(sheetPrc.innerHTML);
+            }
+        };
+        naviChk.onclick = function(){
+            if(this.checked){
+                carPrc.innerHTML = parseInt(carPrc.innerHTML) + parseInt(naviPrc.innerHTML);
+            } else {
+                carPrc.innerHTML = parseInt(carPrc.innerHTML) - parseInt(naviPrc.innerHTML);
+            }
+        };
+        sunrfChk.onclick = function(){
+            if(this.checked){
+                carPrc.innerHTML = parseInt(carPrc.innerHTML) + parseInt(sunrfPrc.innerHTML);
+            } else {
+                carPrc.innerHTML = parseInt(carPrc.innerHTML) - parseInt(sunrfPrc.innerHTML);
+            }
+        };
+        */
+        let price = document.getElementsByClassName("price");
+        let check = document.getElementsByClassName("check");
+        let carPrc = document.getElementById("carPrc");
+        
+        for (let i = 0; i < check.length; i++){    
+            check[i].onclick = function() {
+                if(this.checked){
+                    carPrc.value = parseInt(carPrc.value) + parseInt(price[i].innerHTML);
+                } else {
+                    carPrc.value = parseInt(carPrc.value) - parseInt(price[i].innerHTML);
+                }
+            };
+        }
+        
+        let reset = document.getElementById("reset");
+        reset.onclick = function() {
+            for(let i = 0; i < check.length; i++){
+                if(check[i].checked){
+                    check[i].checked = false;
+                    carPrc.value = parseInt(carPrc.value) - parseInt(price[i].innerHTML);
+                }
+            }
+        }
+    };
+</script>
+<style>
+    h1 {
+        text-align: center;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    table {
+        margin: auto;
+        width: 700px;        
+    }
+    th {
+        background-color: maroon;
+        color: white;
+    }
+    tr:nth-child(6) > td:nth-child(1) {
+        background-color: gray;
+        color: white;
+    }
+    #carPrc {
+        border: none;
+        background-color: white;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bolder;
+        color: firebrick;
+    }
+    p {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <h1>자동차 견적</h1>
+    <form action="#">
+        <p><img src="imgs/car1.jpg" alt="차 사진" align="center"></p>
+        <table>
+            <tr>
+                <th>옵션</th>
+                <th>추가가격</th>
+                <th>선택여부</th>
+            </tr>
+            <tr>
+                <td>인조가죽시트</td>
+                <td id="sheetPrc" class="price">250000</td>
+                <td><input type="checkbox" id="sheetChk" class="check"></td>
+            </tr>
+            <tr>
+                <td>네비게이션</td>
+                <td id="naviPrc" class="price">300000</td>
+                <td><input type="checkbox" id="naviChk" class="check"></td>
+            </tr>
+            <tr>
+                <td>썬루프</td>
+                <td id="sunrfPrc" class="price">440000</td>
+                <td><input type="checkbox" id="sunrfChk" class="check"></td>
+            </tr>
+            <tr>
+                <td>열선</td>
+                <td class="price">100000</td>
+                <td><input type="checkbox" id="warmChk" class="check"></td>
+            </tr>
+            <tr>
+                <td>차량금액(옵션포함) <button id="reset">초기화</button></td>
+                <td colspan="2"><input type="number" id="carPrc"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

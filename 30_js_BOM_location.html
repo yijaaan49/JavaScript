@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>BOM location</title>
+<script>
+    /*
+    BOM location : 사용자 브라우저 창의 URL 정보
+    <location 속성정보>
+    location.href : 주소영역에 있는 URL 정보 설정, 반환
+    location.protocol : URL 프로토콜 조회
+    location.host : URL 호스트이름(IP) + 포트번호
+    location.port : URL 포트번호
+    location.pathname : URL 서버상의 위치정보(path)
+    location.search : URL의 요청쿼리 값    
+    */
+    
+    document.write("<< 현재 로컬 주소 정보 >>", "<br>");
+    document.write("href : " + location.href, "<br>");
+    document.write("<< 현재 통신 규약 정보 >>", "<br>");
+    document.write("protocol : " + location.protocol, "<br>");
+    document.write("<< 현재 서비스하고 있는 서버 정보 >>", "<br>");
+    document.write("host : " + location.host, "<br>");//IP, port
+    document.write("<< 현재 서비스하고 있는 포트 정보 >>", "<br>");
+    document.write("port : " + location.port, "<br>");
+    document.write("<< 현재 경로 정보 >>", "<br>");
+    document.write("pathname : " + location.pathname, "<br>");
+    document.write("<< 서버로 요청하는 값 >>", "<br>"); //?로 찾는 key/value값+#키워드로 찾는 것도 가능
+    document.write("search : " + location.search, "<br>");
+    
+    
+    //location.href = "http://pikle.co/?p=7844"; 해당위치로 변경(이동?)
+</script>
+</head>
+<body>
+  
+</body>
+</html>

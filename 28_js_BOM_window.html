@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS : BOM window 속성, 메소드</title>
+<script>
+    var tv = {
+        width: 1100,
+        height: 700,
+        color: "검정",
+        on: function(){
+            document.write("TV 전원 ON", "<br>");
+        },
+        off: function(){
+            document.write("TV 전원 OFF", "<br>");
+        }
+    };
+    for (let key in tv) { //속성값확인: in
+        document.write(key + " : " + tv[key], "<br>");
+    }
+    document.write("<hr>");
+    
+    //window객체가 가지고 있는 속성, 메소드 확인
+    document.write("<h3>window 객체의 속성, 메소드들</h3>");
+    for(let key in window){
+        document.write(key + " : " + window[key], "<br>")
+    }
+</script>
+</head>
+<body>
+	
+    
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

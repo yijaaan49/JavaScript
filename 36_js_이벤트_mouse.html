@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>마우스 관련 이벤트</title>
+<script>
+    window.onload = function(){
+        var imgbtn = document.getElementById("imgbtn");
+        imgbtn.onmouseover = function(){
+            imgbtn.firstElementChild.src = "imgs/btn2_yellow.png";
+        };
+        imgbtn.onmouseout = function(){
+            imgbtn.firstElementChild.src = "imgs/btn2_gray.png";
+        };
+    };
+    
+    window.onload = function(){
+        var btn1 = document.getElementById("btn1");
+        btn1.onmouseover = function(){
+            btn1.style.backgroundColor = "aqua";
+        };
+        btn1.onmouseout = function(){
+            btn1.style.backgroundColor = "lightgray";
+        };
+        var btn2 = document.getElementById("btn2");
+        btn2.onmouseover = function(){
+            btn2.style.backgroundColor = "aqua";
+        };
+        btn2.onmouseout = function(){
+            btn2.style.backgroundColor = "lightgray";
+        };
+        
+        /*
+        var btn = document.getElementsByClassName("btn");
+        btn.onmouseover = function(){
+            btn.style.backgroundColor = "aqua";  
+        };
+        btn.onmouseout = function(){
+            btn.style.backgroundColor = "lightgray";
+        };
+        */
+        
+        //-----------------------------------------
+    window.onclick = function(){
+        alert("버튼이 클릭되었습니다.");
+    }
+        
+    };
+</script>
+<style>
+    #btn1, #btn2 {
+        background-color: lightgray;
+    }
+</style>
+</head>
+<body>
+    <button id="btn1" class="btn">버튼1</button>
+    <button id="btn2" class="btn">버튼2</button>
+    <hr>
+    <a href = "#" id="imgbtn">
+        <img src = "imgs/btn2_gray.png" alt="버튼">
+    </a>
+</body>
+</html>
